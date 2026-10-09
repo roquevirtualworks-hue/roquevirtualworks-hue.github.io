@@ -37,6 +37,26 @@
   @media (max-width:1024px){.about-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px}.photo-badge{left:-12px}}
   @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{max-width:340px}}
   @media (max-width:720px){.about-grid{gap:44px}.about-photo{max-width:280px}.photo-frame{border-radius:28px;padding:4px}.photo-frame img{border-radius:24px}.photo-badge{left:50%;transform:translateX(-50%);bottom:-18px;font-size:13.5px;padding:10px 16px}.about-body .sec-head{margin-bottom:20px}.about-cta{margin-top:24px}}
+  .exp-list-card{padding:28px 30px 30px;position:relative;overflow:hidden;max-width:920px;margin:0 auto}
+  .exp-list-card::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--grad)}
+  .exp-note{font-size:13px;color:var(--muted);font-weight:500}
+  .exp-list{position:relative;display:grid;gap:0;margin:0;padding:0;list-style:none}
+  .exp-item{position:relative;display:grid;grid-template-columns:16px 1fr;gap:20px;padding:16px 0;border-top:1px solid rgba(124,58,237,.1)}
+  .exp-item:first-child{border-top:0;padding-top:4px}
+  .exp-item:last-child{padding-bottom:0}
+  .exp-dot{position:relative;z-index:1;width:16px;height:16px;margin-top:5px;border-radius:50%;background:#fff;border:3px solid var(--purple)}
+  .exp-item.latest .exp-dot{border:0;background:var(--grad);box-shadow:0 0 0 4px rgba(124,58,237,.15)}
+  .exp-body{min-width:0}
+  .exp-body h3{color:var(--ink);font-size:18px;line-height:1.3;font-weight:700;margin-bottom:2px}
+  .exp-item.latest h3{font-size:21px;font-weight:800}
+  .exp-current{display:inline-block;vertical-align:middle;margin-left:8px;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;color:#fff;background:var(--grad)}
+  .exp-areas{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+  .exp-areas li{font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:999px;color:var(--purple);background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.14)}
+  .edu-wide{max-width:920px;margin-left:auto;margin-right:auto}
+  .edu-school{margin-bottom:0}
+  .exp-item:not(:last-child)::after{content:"";position:absolute;left:7px;top:28px;bottom:-22px;width:2px;background:linear-gradient(180deg,rgba(124,58,237,.4),rgba(20,184,196,.25))}
+  .exp-item:first-child::after{top:16px}
+  @media (max-width:640px){.exp-list-card{padding:22px 18px 24px}.exp-item{gap:14px;padding:14px 0}.exp-body h3{font-size:16.5px}.exp-item.latest h3{font-size:18px}.exp-current{margin-left:6px;font-size:10.5px;padding:3px 8px}.exp-areas li{font-size:12.5px;padding:5px 10px}}
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2314B8C4'/%3E%3Cstop offset='.35' stop-color='%233B82F6'/%3E%3Cstop offset='.7' stop-color='%237C3AED'/%3E%3Cstop offset='1' stop-color='%23C026D3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='url(%23g)' stroke-width='7'/%3E%3C/svg%3E">
@@ -153,7 +173,7 @@
             <h3 class="about-hi">Hi, I’m Roque!</h3>
             <p class="prose">As a Virtual Assistant, my goal is to streamline your day-to-day operations by handling time-consuming administrative tasks, allowing you to focus on what matters most—growing your business and achieving your goals.</p>
             <p class="prose">I specialize in General Virtual Assistance, including email and calendar management, scheduling, data entry, online research, administrative support, and project coordination. I’m reliable, highly organized, detail-oriented, and proactive, with a strong commitment to delivering accurate, efficient, and <span class="nw">high-quality</span> work.</p>
-            <p class="prose">I help business owners stay organized and focused on growth through reliable General Virtual Assistance, Social Media Management, and Data Entry. With a Bachelor’s degree in Marketing and HubSpot Marketing Software and CRM / Sales Software certifications, I bring strong organization, communication, attention to detail, and creativity. My experience includes roles as a Real Estate Agent at eXp Realty, Logistics Coordinator at PODS, and Reservations &amp; Sales Specialist at Choice Hotels, plus sales roles at AT&amp;T and IHG. I streamline daily operations so you can focus on growing your business.</p>
+            <p class="prose">I help business owners stay organized and focused on growth through reliable General Virtual Assistance, Social Media Management, and Data Entry. With a Bachelor’s degree in Marketing and HubSpot Marketing Software and CRM / Sales Software certifications, I bring strong organization, communication, attention to detail, and creativity. Today I work as a Freelance Virtual Assistant for USA clients, and my experience also includes roles as a Real Estate Agent at eXp Realty, Logistics Coordinator at PODS, and Reservations &amp; Sales Specialist at Choice Hotels, plus sales roles at AT&amp;T and IHG. I streamline daily operations so you can focus on growing your business.</p>
             <p class="prose">My approach is simple: take tasks off your plate, keep your operations organized, and help you work more efficiently.</p>
             <ul class="focus-tags" aria-label="Focus areas"><li>General VA</li><li>Admin Support</li><li>Social Media</li><li>E-commerce</li></ul>
           </div>
@@ -169,28 +189,24 @@
           <p class="eyebrow">Background</p>
           <h2 class="h2">Experience &amp; <span class="grad">Education</span></h2>
         </div>
-        <div class="exp-groups">
-          <div class="glass exp-group freelance reveal">
-            <div class="exp-group-head">
-              <p class="mini-label">Freelance Virtual Assistant</p>
-              <span class="yr">2023–Present</span>
-            </div>
-            <h3>General Virtual Assistant</h3>
-            <p class="exp-org">USA Client</p>
-            <p class="mini-label sub-label">Work experience areas</p>
-            <ul class="tick-list">
-              <li>CSR / Sales</li><li>Lead Generation</li><li>Social Media Management (SMM)</li><li>Real Estate VA</li><li>General Virtual Assistant</li>
-            </ul>
-          </div>
-          <div class="glass exp-group professional reveal">
-            <div class="exp-group-head"><p class="mini-label">Professional Experience</p></div>
-            <ol class="exp-timeline">
-              <li><span class="yr">2025–Present</span><div><h3>Real Estate Agent</h3><p>eXp Realty</p></div></li>
-              <li><span class="yr">2024–2025</span><div><h3>Logistics Coordinator</h3><p>PODS</p></div></li>
-              <li><span class="yr">2022–2024</span><div><h3>Reservations &amp; Sales Specialist</h3><p>Choice Hotels</p></div></li>
-              <li><span class="yr yr-muted">Sales</span><div><h3>Sales Associate</h3><p>AT&amp;T &amp; IHG</p></div></li>
-            </ol>
-          </div>
+        <div class="glass exp-list-card reveal">
+          <div class="exp-group-head"><p class="mini-label">Work Experience</p><span class="exp-note">Most recent first</span></div>
+          <ol class="exp-list">
+            <li class="exp-item latest">
+              <span class="exp-dot" aria-hidden="true"></span>
+              <div class="exp-body">
+                <h3>Freelance Virtual Assistant <span class="exp-current">Current</span></h3>
+                <p class="exp-org">USA Clients</p>
+                <ul class="exp-areas" aria-label="Work experience areas">
+                  <li>CSR / Sales</li><li>Lead Generation</li><li>Social Media Management (SMM)</li><li>Real Estate VA</li><li>General Virtual Assistant</li>
+                </ul>
+              </div>
+            </li>
+            <li class="exp-item"><span class="exp-dot" aria-hidden="true"></span><div class="exp-body"><h3>Real Estate Agent</h3><p class="exp-org">eXp Realty</p></div></li>
+            <li class="exp-item"><span class="exp-dot" aria-hidden="true"></span><div class="exp-body"><h3>Logistics Coordinator</h3><p class="exp-org">PODS</p></div></li>
+            <li class="exp-item"><span class="exp-dot" aria-hidden="true"></span><div class="exp-body"><h3>Reservations &amp; Sales Specialist</h3><p class="exp-org">Choice Hotels</p></div></li>
+            <li class="exp-item"><span class="exp-dot" aria-hidden="true"></span><div class="exp-body"><h3>Sales Associate</h3><p class="exp-org">AT&amp;T &amp; IHG</p></div></li>
+          </ol>
         </div>
         <div class="glass edu-card edu-wide reveal">
           <img class="edu-photo" src="graduation.svg" alt="Roque Torejas in graduation attire" width="360" height="376" loading="lazy" decoding="async">
@@ -198,7 +214,6 @@
             <p class="mini-label">Education</p>
             <h3>Bachelor of Science in Marketing Management</h3>
             <p class="edu-school">CAP College Makati</p>
-            <span class="yr">2019–2023</span>
           </div>
         </div>
         <div class="chips reveal">
