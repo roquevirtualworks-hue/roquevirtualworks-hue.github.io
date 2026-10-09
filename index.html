@@ -24,6 +24,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+  .about-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:64px;align-items:center}
+  .about-photo{position:relative;margin:0;max-width:420px;justify-self:center;width:100%}
+  .about-photo::before{content:"";position:absolute;inset:6% -6% -4% 6%;border-radius:40px;background:var(--grad);filter:blur(38px);opacity:.38}
+  .photo-frame{position:relative;z-index:1;padding:5px;border-radius:32px;background:var(--grad);box-shadow:var(--shadow-lg)}
+  .photo-frame img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:27px;background:#fff}
+  .photo-badge{position:absolute;z-index:2;left:-22px;bottom:34px;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;font-family:var(--head);font-weight:700;font-size:14.5px;color:var(--ink);white-space:nowrap}
+  .badge-dot{width:22px;height:22px;border-radius:50%;flex:none;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:12px;line-height:1}
+  .about-body .sec-head{margin-bottom:24px}
+  .about-cta{margin-top:28px}
+  @media (max-width:1024px){.about-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px}.photo-badge{left:-12px}}
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{max-width:340px}}
+  @media (max-width:720px){.about-grid{gap:44px}.about-photo{max-width:280px}.photo-frame{border-radius:28px;padding:4px}.photo-frame img{border-radius:24px}.photo-badge{left:50%;transform:translateX(-50%);bottom:-18px;font-size:13.5px;padding:10px 16px}.about-body .sec-head{margin-bottom:20px}.about-cta{margin-top:24px}}
+  </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2314B8C4'/%3E%3Cstop offset='.35' stop-color='%233B82F6'/%3E%3Cstop offset='.7' stop-color='%237C3AED'/%3E%3Cstop offset='1' stop-color='%23C026D3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='url(%23g)' stroke-width='7'/%3E%3C/svg%3E">
 </head>
@@ -122,14 +136,22 @@
 
     <!-- 2. ABOUT -->
     <section class="section" id="about">
-      <div class="wrap split">
-        <div class="sec-head left reveal">
-          <p class="eyebrow">Get to know me</p>
-          <h2 class="h2"><span class="grad">About</span></h2>
-          <a href="#contact" class="btn btn-grad">Get Started</a>
-        </div>
-        <div class="glass card-lg reveal">
-          <p class="prose">I help business owners stay organized and focused on growth through reliable General Virtual Assistance, Social Media Management, and Data Entry. With a Bachelor’s degree in Marketing and HubSpot Marketing Software Certification, I bring strong organization, communication, attention to detail, and creativity. My experience includes roles as a Real Estate Agent at eXp Realty, Logistics Coordinator at PODS, and Reservations &amp; Sales Specialist at Choice Hotels, plus sales roles at AT&amp;T and IHG. I streamline daily operations so you can focus on growing your business.</p>
+      <div class="wrap about-grid">
+        <figure class="about-photo reveal">
+          <div class="photo-frame">
+            <img src="headshot.svg" alt="Roque Torejas, Virtual Assistant" width="480" height="600" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="glass photo-badge"><span class="badge-dot" aria-hidden="true">✓</span>HubSpot Certified</figcaption>
+        </figure>
+        <div class="about-body">
+          <div class="sec-head left reveal">
+            <p class="eyebrow">Get to know me</p>
+            <h2 class="h2"><span class="grad">About</span></h2>
+          </div>
+          <div class="glass card-lg reveal">
+            <p class="prose">I help business owners stay organized and focused on growth through reliable General Virtual Assistance, Social Media Management, and Data Entry. With a Bachelor’s degree in Marketing and HubSpot Marketing Software Certification, I bring strong organization, communication, attention to detail, and creativity. My experience includes roles as a Real Estate Agent at eXp Realty, Logistics Coordinator at PODS, and Reservations &amp; Sales Specialist at Choice Hotels, plus sales roles at AT&amp;T and IHG. I streamline daily operations so you can focus on growing your business.</p>
+          </div>
+          <div class="about-cta reveal"><a href="#contact" class="btn btn-grad">Get Started</a></div>
         </div>
       </div>
     </section>
