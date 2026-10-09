@@ -39,7 +39,8 @@
 
   // Fade-in on scroll
   var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
@@ -55,10 +56,10 @@
     home: 'home', about: 'about', experience: 'about',
     services: 'services', 'social-media': 'services', 'lead-generation': 'services', industries: 'services',
     'how-it-works': 'services', onboarding: 'services', results: 'portfolio', portfolio: 'portfolio',
-    testimonials: 'portfolio', pricing: 'services', tools: 'services', faq: 'contact', insights: 'contact', contact: 'contact'
+    testimonials: 'portfolio', pricing: 'pricing', tools: 'pricing', faq: 'pricing', insights: 'pricing', contact: 'contact'
   };
   var links = {};
-  nav.querySelectorAll('a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  nav.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
   var sections = document.querySelectorAll('main section[id]');
   function setActive() {
     var y = window.scrollY + window.innerHeight * 0.35, current = 'home';
