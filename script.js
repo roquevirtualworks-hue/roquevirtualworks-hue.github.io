@@ -53,8 +53,8 @@
 
   // Active nav link
   var map = {
-    home: 'home', about: 'about', experience: 'about',
-    services: 'services', 'social-media': 'services', 'lead-generation': 'services', industries: 'services',
+    home: 'home', about: 'about', experience: 'about', certifications: 'about',
+    services: 'services', skills: 'services', 'social-media': 'services', 'lead-generation': 'services', industries: 'services',
     'how-it-works': 'services', onboarding: 'services', results: 'portfolio', portfolio: 'portfolio',
     testimonials: 'portfolio', pricing: 'pricing', tools: 'pricing', faq: 'pricing', insights: 'pricing', contact: 'contact'
   };
